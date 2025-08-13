@@ -1,4 +1,4 @@
-require('dotenv').config(); // Load .env first
+require('dotenv').config();
 
 const express = require('express');
 const http = require('http');
@@ -7,7 +7,7 @@ const cors = require('cors');
 const os = require('os');
 const { exec } = require('child_process');
 
-const PORT = process.env.PORT || 5050;
+const PORT = process.env.PORT;
 const app = express();
 app.use(cors());
 app.use(express.json());

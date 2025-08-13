@@ -1,4 +1,4 @@
-PORT=5050
+PORT = 5050
 
-next step: 
-replace the "port" with "5050" in the server.js file
+replace the process.env.port with the number "5050"
+remove this line of code here require('dotenv').config();
