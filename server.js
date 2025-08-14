@@ -1,5 +1,4 @@
-require('dotenv').config();
-
+// server.js
 const express = require('express');
 const http = require('http');
 const WebSocket = require('ws');
@@ -7,7 +6,7 @@ const cors = require('cors');
 const os = require('os');
 const { exec } = require('child_process');
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5050;
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -181,9 +180,6 @@ app.get('/', (req, res) => {
 
 // 🚀 Start the server
 server.listen(PORT, () => {
-  const serverIps = getServerIps();
   console.log(`✅ Server listening on port ${PORT}`);
-  serverIps.forEach(ip => {
-    console.log(`🌐 WebSocket endpoint ws://${ip.address}:${PORT}`);
-  });
+  console.log(`🌐 WebSocket endpoint ws://localhost:${PORT}`);
 });
